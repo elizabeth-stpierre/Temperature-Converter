@@ -9,6 +9,19 @@
             color: firebrick;
             font-family: GungSeo;}
     </style>
+    <script type="text/javascript">
+        "use strict";
+        function calculateC() {
+            var fahrenheit = parseFloat(document.getElementById('f').value);
+            var celsius = (fahrenheit - 32) * (5/9);
+            document.getElementById('c').value = celsius;
+        }
+        function calculateF() {
+            var celsius = parseFloat(document.getElementById('c').value);
+            var fahrenheit = (celsius * 9/5) + 32;
+            document.getElementById('f').value = fahrenheit;
+        }
+    </script>
 </head>
 <body>
 <h1>Temperature Converter</h1>
@@ -19,18 +32,17 @@
     <input id="c"
            type="number"
            placeholder="Enter celsius here">
-    <button>Convert to Fahrenheit!</button><br>
-    <p><label for="value">Value:</label>
+    <button value="calculate" onclick="calculateF();return false">Convert to Fahrenheit!</button><br>
+    <!--<p><label for="value">Value:</label>
     <input type="text"
            class="readonly"
            id="value"
-           readonly><br>
-    <p><label for="f">Fahrenheit to Celsius:</label>
+           readonly><br>-->
+    <p><label for="f" >Fahrenheit to Celsius:</label>
     <input id="f"
            type="number"
            placeholder="Enter fahrenheit here">
-    <button>Convert to Celsius!</button>
-
+    <button value="calculate" onclick="calculateC();return false">Convert to Celsius!</button>
 </p><img src="Images/Thermometer.png" width="200" height="200"/>
 </body>
 </html>
